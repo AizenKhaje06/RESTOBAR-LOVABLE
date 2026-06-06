@@ -1,0 +1,125 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                      START HERE - DATABASE SETUP                           ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+⏱️  TAKES 5 MINUTES TOTAL
+
+════════════════════════════════════════════════════════════════════════════
+
+📋 WHICH FILE TO USE?
+
+→ Most people: Use SUPABASE_SQL_SIMPLE.sql (EASIEST)
+→ Need advanced? Use SUPABASE_SCHEMA.sql
+→ Video walkthrough? See SUPABASE_CONNECT.md
+
+════════════════════════════════════════════════════════════════════════════
+
+🚀 8 STEPS TO CONNECT DATABASE
+
+1️⃣  Go to supabase.com → Create Project
+    (Set database password, wait 2 minutes)
+
+2️⃣  Open file: SUPABASE_SQL_SIMPLE.sql
+    (Copy all text - Ctrl+A, then Ctrl+C)
+
+3️⃣  In Supabase → SQL Editor → New Query
+    (Paste your SQL - Ctrl+V)
+
+4️⃣  Click "Run"
+    (Wait for ✅ checkmark - takes 10 seconds)
+
+5️⃣  Create Storage Bucket
+    Storage → Create bucket → Name: menu-images → Public → Create
+
+6️⃣  Get API Keys
+    Settings → API
+    Copy: Project URL and Anon public key
+
+7️⃣  Update .env.local
+    VITE_SUPABASE_URL=https://xxxxx.supabase.co
+    VITE_SUPABASE_ANON_KEY=your-anon-key
+
+8️⃣  Restart app: pnpm dev
+    Login: admin@restaubar.com / admin123
+    ✅ If you see dashboard = Success!
+
+════════════════════════════════════════════════════════════════════════════
+
+📂 FILES IN THIS FOLDER
+
+SUPABASE_SQL_SIMPLE.sql
+  ← COPY & PASTE THIS (easiest)
+  - 164 lines
+  - Just works
+  - Recommended
+
+SUPABASE_SCHEMA.sql
+  ← Use this for advanced features
+  - 405 lines
+  - Views, triggers, functions
+  - Production ready
+
+SUPABASE_CONNECT.md
+  ← Detailed step-by-step guide
+  - With screenshots (described)
+  - Troubleshooting help
+  - Password hashing
+  - Backup procedures
+
+DATABASE_SETUP.md
+  ← Overview and checklist
+  - What gets created
+  - Verify connection works
+  - Limits and specs
+
+SQL_FILES_GUIDE.txt
+  ← Comparison of all SQL files
+
+════════════════════════════════════════════════════════════════════════════
+
+🔑 DEMO ACCOUNTS (After running SQL)
+
+Admin
+  admin@restaubar.com / admin123
+
+POS
+  pos@restaubar.com / pos123
+
+Waiter
+  waiter@restaubar.com / waiter123
+
+════════════════════════════════════════════════════════════════════════════
+
+❓ STILL NEED HELP?
+
+Step-by-step:      See SUPABASE_CONNECT.md
+Troubleshooting:   See SUPABASE_CONNECT.md
+SQL details:       See SUPABASE_SCHEMA.sql
+Quick overview:    See DATABASE_SETUP.md
+Compare files:     See SQL_FILES_GUIDE.txt
+
+════════════════════════════════════════════════════════════════════════════
+
+⚡ TL;DR (Too Long; Didn't Read)
+
+1. Copy SUPABASE_SQL_SIMPLE.sql
+2. Paste in Supabase SQL Editor
+3. Click Run
+4. Create menu-images bucket
+5. Get API keys
+6. Update .env.local
+7. Restart app
+8. Login with admin@restaubar.com / admin123
+9. Done! ✅
+
+════════════════════════════════════════════════════════════════════════════
+
+🎉 YOU'RE READY!
+
+Everything you need is ready to copy & paste.
+Takes 5 minutes.
+No technical knowledge needed.
+
+Start with SUPABASE_SQL_SIMPLE.sql and follow the 8 steps above.
+
+Questions? See SUPABASE_CONNECT.md for detailed instructions.

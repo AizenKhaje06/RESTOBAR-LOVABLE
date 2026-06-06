@@ -1,0 +1,205 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           RESTAUBAR DATABASE - SQL FILES GUIDE                              ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+You have 3 SQL files to choose from:
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 1. SUPABASE_SQL_SIMPLE.sql (RECOMMENDED) ⭐⭐⭐⭐⭐                         │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Use this one if you want:                                                 │
+│  ✅ Simplest setup (164 lines)                                             │
+│  ✅ Just copy & paste (no modifications)                                   │
+│  ✅ All essential tables                                                   │
+│  ✅ Sample data included                                                   │
+│  ✅ Works perfectly                                                        │
+│                                                                              │
+│  Includes:                                                                  │
+│  ✓ Roles table (admin, pos, waiter)                                       │
+│  ✓ Users table (3 demo accounts)                                          │
+│  ✓ Categories table (7 categories)                                        │
+│  ✓ Menu items (9 sample items)                                            │
+│  ✓ Restaurant tables (6 tables)                                           │
+│  ✓ Orders, order_items, payments, receipts                               │
+│  ✓ Activity logs                                                          │
+│                                                                              │
+│  When to use: 👈 START HERE if unsure                                      │
+│  File size: ~164 lines                                                     │
+│  Setup time: 5 minutes                                                     │
+│  Difficulty: EASY                                                          │
+│                                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 2. SUPABASE_SCHEMA.sql (FULL VERSION) ⭐⭐⭐⭐                             │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Use this one if you want:                                                 │
+│  ✅ All advanced features                                                  │
+│  ✅ Views for complex queries                                              │
+│  ✅ Triggers for automation                                                │
+│  ✅ Functions for calculations                                             │
+│  ✅ Production-ready setup                                                 │
+│                                                                              │
+│  Extra features over Simple:                                               │
+│  ✓ Database views (orders_summary, menu_items_detail, etc.)              │
+│  ✓ Triggers for automatic calculations                                    │
+│  ✓ Functions for business logic                                           │
+│  ✓ Row Level Security setup (optional)                                    │
+│  ✓ Better indexing                                                        │
+│  ✓ Comments & documentation                                               │
+│                                                                              │
+│  When to use: When you need advanced features                             │
+│  File size: ~405 lines                                                     │
+│  Setup time: 5 minutes                                                     │
+│  Difficulty: MEDIUM                                                        │
+│                                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 3. Manual SQL (Copy from DATABASE_SETUP.md) ⭐⭐⭐                         │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Use this one if you want:                                                 │
+│  ✅ Custom/selective table creation                                        │
+│  ✅ Learn SQL while setting up                                             │
+│  ✅ Modify the schema before running                                       │
+│                                                                              │
+│  Copy from: DATABASE_SETUP.md file                                         │
+│  When to use: Advanced users only                                          │
+│  Difficulty: HARD                                                          │
+│                                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ QUICK START INSTRUCTIONS                                                   ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+STEP 1: Pick a SQL file
+  👉 Start with SUPABASE_SQL_SIMPLE.sql (easiest)
+
+STEP 2: Open the file
+  - In your editor/IDE
+  - Select all text (Ctrl+A)
+  - Copy it (Ctrl+C)
+
+STEP 3: Go to Supabase
+  - Go to supabase.com
+  - Create a project (if you haven't)
+  - Go to SQL Editor
+  - Click "New Query"
+  - Paste your SQL (Ctrl+V)
+  - Click "Run"
+
+STEP 4: Create Storage Bucket
+  - Go to Storage tab
+  - Click "Create bucket"
+  - Name: menu-images
+  - Check "Public bucket"
+  - Click Create
+
+STEP 5: Get API Keys
+  - Go to Settings → API
+  - Copy Project URL and Anon Key
+
+STEP 6: Update .env.local
+  VITE_SUPABASE_URL=https://xxxxx.supabase.co
+  VITE_SUPABASE_ANON_KEY=your-anon-key
+
+STEP 7: Restart App
+  pnpm dev
+
+STEP 8: Login & Test
+  - Go to http://localhost:8080/login
+  - Email: admin@restaubar.com
+  - Password: admin123
+  - ✅ Dashboard loads = Success!
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ DEMO ACCOUNTS (Created by SQL)                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Admin Account
+  Email:    admin@restaubar.com
+  Password: admin123
+  Role:     Administrator (full access)
+
+POS Account
+  Email:    pos@restaubar.com
+  Password: pos123
+  Role:     POS Operator (payments & orders)
+
+Waiter Account
+  Email:    waiter@restaubar.com
+  Password: waiter123
+  Role:     Waiter (order confirmation)
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ WHICH FILE TO USE?                                                         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Are you a beginner?
+  → Use SUPABASE_SQL_SIMPLE.sql ✅
+
+Do you need advanced features?
+  → Use SUPABASE_SCHEMA.sql ✅
+
+Do you want to customize?
+  → Use DATABASE_SETUP.md and modify ✅
+
+Still unsure?
+  → ALWAYS START WITH SUPABASE_SQL_SIMPLE.sql
+  → You can upgrade to SCHEMA.sql later
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ DETAILED INSTRUCTIONS                                                      ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+For step-by-step with screenshots and troubleshooting:
+  👉 See SUPABASE_CONNECT.md
+
+For database architecture and detailed specs:
+  👉 See SUPABASE_SCHEMA.sql comments
+
+For quick overview:
+  👉 See DATABASE_SETUP.md
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ WHAT YOU GET                                                               ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+✅ 10 Database Tables
+✅ 3 Demo User Accounts
+✅ 7 Food Categories
+✅ 9 Sample Menu Items
+✅ 6 Restaurant Tables
+✅ All Relationships Set Up
+✅ Sample Data Loaded
+✅ Ready to Use Immediately
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ SUPPORT                                                                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Documentation Files:
+  - SUPABASE_SETUP.md          (Image upload setup)
+  - SUPABASE_CONNECT.md        (Step-by-step)
+  - DATABASE_SETUP.md          (Overview)
+  - FEATURES_COMPLETE.md       (All features)
+  - QUICKSTART.md              (Quick guide)
+
+Supabase Help:
+  - supabase.com/docs
+  - status.supabase.com
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║ 🎉 YOU'RE READY TO GO!                                                    ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Just pick SUPABASE_SQL_SIMPLE.sql and follow the 8 steps above.
+Should take 5 minutes total.
+
+Questions? See SUPABASE_CONNECT.md for detailed help.
+
+Happy restaurant managing! 🍽️
