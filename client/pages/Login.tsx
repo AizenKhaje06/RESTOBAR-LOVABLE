@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
 import { toast } from 'sonner';
 
@@ -8,7 +7,6 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,8 +14,12 @@ export default function Login() {
     
     try {
       await login(email, password);
-      navigate('/dashboard');
+
       toast.success('Login successful');
+
+      // ✅ FINAL FIX (redirect)
+      window.location.href = '/dashboard';
+
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'Login failed');
     } finally {
@@ -25,7 +27,6 @@ export default function Login() {
     }
   };
 
-  // Demo accounts
   const demoAccounts = [
     { email: 'admin@restaubar.com', password: 'admin123', role: 'Admin' },
     { email: 'pos@restaubar.com', password: 'pos123', role: 'POS' },
@@ -40,7 +41,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 p-4">
       <div className="w-full max-w-md">
-        {/* Logo/Header */}
+        
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
@@ -53,7 +54,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Login Form */}
         <div className="bg-white rounded-xl shadow-xl p-8 dark:bg-slate-800">
           <h2 className="text-2xl font-bold mb-6 text-foreground">Login</h2>
 
@@ -95,7 +95,6 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Demo Accounts */}
           <div className="mt-8 pt-6 border-t border-border">
             <p className="text-sm text-muted-foreground mb-4">Demo Accounts:</p>
             <div className="space-y-2">
@@ -113,7 +112,6 @@ export default function Login() {
           </div>
         </div>
 
-        {/* Footer */}
         <p className="text-center text-slate-400 text-sm mt-6">
           Production-ready RestauBar Management System
         </p>
