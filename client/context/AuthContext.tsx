@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { createClient } from "@supabase/supabase-js";
 
 interface User {
@@ -26,6 +26,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  // ✅ LOAD USER FROM LOCAL STORAGE
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
   const login = useCallback(async (email: string, password: string) => {
     setIsLoading(true);
     try {
@@ -42,7 +50,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const userData = {
           id: data.user.id,
           email: data.user.email!,
-          role: "admin",
+          role: "admin", // pwede mo palitan later
         };
 
         setUser(userData);
